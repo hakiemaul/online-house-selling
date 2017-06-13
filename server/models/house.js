@@ -1,15 +1,28 @@
 var mongoose = require('mongoose');
 
 var houseSchema = mongoose.Schema({
-    address: {
+    title: {
       type: String,
-      required: [true, "House's address can't be empty!"]
+      required: [true, "House's title can't be empty!"]
     },
+    pictures: [String],
+    description: {
+      type: String,
+      required: [true, "House's description can't be empty!"]
+    },
+    city: String,
     price: {
       type: Number,
       required: [true, "House's price can't be empty!"]
     },
-    specifications: [String],
+    specifications: {
+      bedrooms: { type: Number, required: true },
+      bathrooms: { type: Number, required: true },
+      area: { type: String, required: true },
+      condition: Boolean,
+      floors: Number,
+      certificate: String
+    },
     contact: {
       type: String,
       required: [true, "Fill your contact detail!"]

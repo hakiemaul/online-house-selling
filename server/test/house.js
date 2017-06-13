@@ -41,7 +41,14 @@ describe('House API test', () => {
       .send({
         address: "Jl. Lumbu Tengah Raya No. 30, Perumahan Bumi Bekasi Baru",
         price: 100000000,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         lng: "106.994220",
         createdAt: new Date(),
@@ -65,7 +72,14 @@ describe('House API test', () => {
       .post('/api/houses')
       .send({
         price: 100000000,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         lng: "106.994220",
         createdAt: new Date(),
@@ -84,7 +98,14 @@ describe('House API test', () => {
       .post('/api/houses')
       .send({
         address: "Jl. Lumbu Tengah Raya No. 30, Perumahan Bumi Bekasi Baru",
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         lng: "106.994220",
         createdAt: new Date(),
@@ -104,7 +125,14 @@ describe('House API test', () => {
       .send({
         address: "Jl. Lumbu Tengah Raya No. 30, Perumahan Bumi Bekasi Baru",
         price: 100000000,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lng: "106.994220",
         createdAt: new Date(),
         contact: "082139192891 - Aulia"
@@ -123,7 +151,14 @@ describe('House API test', () => {
       .send({
         address: "Jl. Lumbu Tengah Raya No. 30, Perumahan Bumi Bekasi Baru",
         price: 100000000,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         createdAt: new Date(),
         contact: "082139192891 - Aulia"
@@ -142,7 +177,14 @@ describe('House API test', () => {
       .send({
         address: "Jl. Lumbu Tengah Raya No. 30, Perumahan Bumi Bekasi Baru",
         price: 100000000,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         lng: "106.994220",
         createdAt: new Date()
@@ -162,7 +204,14 @@ describe('House API test', () => {
       var newHouse = new House({
         address: "Jl. Lumbu Tengah Raya No. 30, Perumahan Bumi Bekasi Baru",
         price: 100000000,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         lng: "106.994220",
         createdAt: new Date(),
@@ -183,7 +232,14 @@ describe('House API test', () => {
       .send({
         address: "Tes",
         price: 100,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         lng: "106.994220",
         createdAt: new Date(),
@@ -205,7 +261,14 @@ describe('House API test', () => {
       var newHouse = new House({
         address: "Jl. Lumbu Tengah Raya No. 30, Perumahan Bumi Bekasi Baru",
         price: 100000000,
-        specifications: ["2 lantai", "Bebas banjir"],
+        specifications: {
+          bedrooms: 4,
+          bathrooms: 2,
+          area: "72 m2",
+          condition: true,
+          floors: 2,
+          certificate: "SHM"
+        },
         lat: "-6.287905",
         lng: "106.994220",
         createdAt: new Date(),
