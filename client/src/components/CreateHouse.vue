@@ -183,6 +183,7 @@ export default {
         this.house.specifications.condition = false
       }
       this.$store.dispatch('addHouse', this.house)
+      this.$router.push('/')
     }
   }
 }

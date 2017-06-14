@@ -16,7 +16,7 @@
       </ul>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
-          <button type="button" class="btn btn-success"><router-link to="./add">Tambahkan Properti Anda</router-link></button>
+          <button type="button" class="btn btn-default"><router-link to="./add">Tambahkan Properti Anda</router-link></button>
         </li>
       </ul>
     </div>

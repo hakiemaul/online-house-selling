@@ -6,16 +6,32 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    houses: []
+    houses: [],
+    aHouse: {}
   },
   mutations: {
     getHouses: function (state) {
       axios.get('http://localhost:3000/api/houses')
       .then(response => {
         state.houses = response.data
+        state.houses.forEach(house => {
+          house.price = house.price.toLocaleString()
+          house.createdAt = new Date(house.createdAt).toLocaleDateString('de-DE')
+        })
+      })
+    },
+    getHouse: function (state, payload) {
+      console.log(payload)
+      axios.get(`http://localhost:3000/api/houses/${payload}`)
+      .then(response => {
+        state.aHouse = response.data
+        state.aHouse.price = state.aHouse.price.toLocaleString()
+        state.aHouse.createdAt = new Date(state.aHouse.createdAt).toLocaleDateString('de-DE')
       })
     },
     addHouse: function (state, result) {
+      result.price = result.price.toLocaleString()
+      result.createdAt = new Date(result.createdAt).toLocaleDateString('de-DE')
       state.houses.push(result)
     }
   },
@@ -57,6 +73,9 @@ export const store = new Vuex.Store({
   getters: {
     houses (state) {
       return state.houses
+    },
+    house (state) {
+      return state.aHouse
     }
   }
 })

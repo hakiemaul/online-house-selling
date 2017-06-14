@@ -25,7 +25,7 @@ var get = function(req, res) {
 }
 
 var getOne = function(req, res) {
-  House.find({_id: req.params.id}, (err, house) => {
+  House.findById(req.params.id, (err, house) => {
     res.send(err ? err: house)
   })
 }

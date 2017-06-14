@@ -1,13 +1,17 @@
 <template lang="html">
   <div id="view-list">
+    <!-- https://tiket3.kereta-api.co.id/?_it8tnz=TXc9PQ==&_8dnts=YzJOb1pXUjFiR1U9 -->
     <h4>Daftar Rumah</h4>
     <div v-for="house in houses">
       <div class="row each">
-        <div class="col-3">
-          <img :src="house.pictures[0]" alt="" class="img-fluid" style="height: 100%;">
+        <div class="col-1">
+          {{ house.createdAt }}
         </div>
-        <div class="col-6">
-          <h5>{{ house.title }}</h5>
+        <div class="col-2">
+          <img :src="house.pictures[0]" alt="" class="img-fluid" style="max-height: 100%;">
+        </div>
+        <div class="col-6 content">
+          <h5 :title="house.title">{{ house.title }}</h5>
           <div class="row">
             <div class="col-3 content">
               Spesifikasi
@@ -38,12 +42,6 @@ export default {
     houses () {
       return this.$store.getters.houses
     }
-  },
-  created () {
-    this.houses.forEach(house => {
-      house.price = house.price.toLocaleString()
-      console.log(house.price)
-    })
   }
 }
 </script>
@@ -57,11 +55,17 @@ export default {
 
 .content {
   margin-top: 10px;
+  overflow: hidden;
+}
+
+.content h5 {
+  height: 1.1em;
+  overflow: hidden;
 }
 
 .each {
   margin: 10px;
-  padding: 40px;
+  padding: 30px;
   border: 1px solid #d8d8d8;
   border-radius: 20px;
   max-height: 300px;
